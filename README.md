@@ -90,6 +90,6 @@ Now its is expected you see in group id: *br.com.its.archetype*
 
 * choose the archetype and go ahead clicking in next 
 
-**Step 4
+**Step 4**
 
 Import  webapps-webdev via Maven in your IDE**
