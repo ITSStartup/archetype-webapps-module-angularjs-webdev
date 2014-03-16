@@ -1,0 +1,42 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!doctype html>
+<html>
+<head>
+	<title>Test .closest() Performance</title>
+	<script src="benchmark.js"></script>
+	<script src="jquery-basis.js"></script>
+	<script>var old = jQuery.noConflict(true);</script>
+	<script src="../dist/jquery.js"></script>
+	<script>
+		jQuery(function ready() {
+			var node = ${symbol_dollar}("${symbol_pound}child"), name;
+
+			jQuery.each([".zoo", "${symbol_pound}zoo", "[data-foo=zoo]", "${symbol_pound}nonexistant"], function(i, item) {
+	setTimeout(function(){
+					name = "closest '" + item + "'";
+
+		jQuery("${symbol_pound}results").append("<li>" + name + "<ul>" +
+						"<li>new: " + benchmarkString("${symbol_dollar}('${symbol_pound}child').closest('" + item + "')", 2500, name) + "</li>" +
+						"<li>old: " + benchmarkString("old('${symbol_pound}child').closest('" + item + "')", 2500, name) + "</li>"
+			+ "</ul></li>");
+	}, 100);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<p>Hello</p>
+		<div class="zoo" id="zoo" data-foo="bar">
+			<div>
+				<p id="child">lorem ipsum</p>
+				<p>dolor sit amet</p>
+			</div>
+		</div>
+	</div>
+	<ul id="results"></ul>
+</body>
+</html>
+

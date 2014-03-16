@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd" name="webapps-module-angularjs-webdev"
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>webapps-webdev/src</directory>
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.html</include>
+        <include>**/*.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>webapps-webdev/.settings</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>webapps-webdev</directory>
+      <includes>
+        <include>**/*.project</include>
+        <include>**/*.xml</include>
+        <include>**/*.classpath</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>webapps-webdev/target</directory>
+      <includes>
+        <include>**/*.xml</include>
+        <include>**/*.properties</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>webapps-webdev/src</directory>
+      <includes>
+        <include>**/*.</include>
+        <include>**/*.opts</include>
+        <include>**/*.woff</include>
+        <include>**/*.js</include>
+        <include>**/*.bin/nopt</include>
+        <include>**/*.string/Gemfile</include>
+        <include>**/*.bin/rimraf</include>
+        <include>**/*.swf</include>
+        <include>**/*.litcoffee</include>
+        <include>**/*.bin/jpegtran</include>
+        <include>**/*.eot</include>
+        <include>**/*.string/Rakefile</include>
+        <include>**/*.gitmodules</include>
+        <include>**/*.php</include>
+        <include>**/*.bin/esvalidate</include>
+        <include>**/*.key</include>
+        <include>**/*.bin/autoprefixer</include>
+        <include>**/*.jsm</include>
+        <include>**/*.gzip</include>
+        <include>**/*.markdown</include>
+        <include>**/*.gz</include>
+        <include>**/*.coffee</include>
+        <include>**/*.bin/which</include>
+        <include>**/*.bin/cleancss</include>
+        <include>**/*.editorconfig</include>
+        <include>**/*.jshintrc</include>
+        <include>**/*.sh</include>
+        <include>**/*.log</include>
+        <include>**/*.bin/karma</include>
+        <include>**/*.htaccess</include>
+        <include>**/*.bin/esparse</include>
+        <include>**/*.cmd</include>
+        <include>**/*.jshintignore</include>
+        <include>**/*.gitignore</include>
+        <include>**/*.bin/gifsicle</include>
+        <include>**/*.css</include>
+        <include>**/*.gif</include>
+        <include>**/*.csr</include>
+        <include>**/*.bin/cake</include>
+        <include>**/*.bin/node-http-proxy</include>
+        <include>**/*.mailmap</include>
+        <include>**/*.yaml</include>
+        <include>**/*.bin/pngquant</include>
+        <include>**/*.ico</include>
+        <include>**/*.conf</include>
+        <include>**/*.bin/coffee</include>
+        <include>**/*.srl</include>
+        <include>**/*.cnf</include>
+        <include>**/*.md</include>
+        <include>**/*.json</include>
+        <include>**/*.mdown</include>
+        <include>**/*.bin/js-yaml</include>
+        <include>**/*.bin/lodash</include>
+        <include>**/*.map</include>
+        <include>**/*.types</include>
+        <include>**/*.yml</include>
+        <include>**/*.crt</include>
+        <include>**/*.svg</include>
+        <include>**/*.bowerrc</include>
+        <include>**/*.buildignore</include>
+        <include>**/*.ttf</include>
+        <include>**/*.bin/ncp</include>
+        <include>**/*.lock</include>
+        <include>**/*.bin/optipng</include>
+        <include>**/*.npmignore</include>
+        <include>**/*.jpg</include>
+        <include>**/*.pem</include>
+        <include>**/*.png</include>
+        <include>**/*.gitattributes</include>
+        <include>**/*.hidden</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>webapps-webdev/.externalToolBuilders</directory>
+      <includes>
+        <include>**/*.launch</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>webapps-webdev/.settings</directory>
+      <includes>
+        <include>**/*.prefs</include>
+        <include>**/*.component</include>
+        <include>**/*.container</include>
+        <include>**/*.name</include>
+        <include>**/*.jsdtscope</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>webapps-webdev/target</directory>
+      <includes>
+        <include>**/*.MF</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.settings</directory>
+      <includes>
+        <include>**/*.prefs</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.classpath</include>
+        <include>.project</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.gitignore</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+  <modules>
+    <module id="webapps-core" dir="webapps-core" name="webapps-core">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/test/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/test/resources</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>.settings</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>.settings</directory>
+          <includes>
+            <include>**/*.prefs</include>
+            <include>**/*.component</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.classpath</include>
+            <include>.project</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+    <module id="webapps-web" dir="webapps-web" name="webapps-web">
+      <fileSets>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/java</directory>
+          <includes>
+            <include>**/*.java</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.xml</include>
+            <include>**/*.html</include>
+            <include>**/*.txt</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>src/main/resources</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>src/main/webapp</directory>
+          <includes>
+            <include>**/*.</include>
+            <include>**/*.mailmap</include>
+            <include>**/*.woff</include>
+            <include>**/*.js</include>
+            <include>**/*.ico</include>
+            <include>**/*.swf</include>
+            <include>**/*.eot</include>
+            <include>**/*.gitmodules</include>
+            <include>**/*.md</include>
+            <include>**/*.json</include>
+            <include>**/*.mdown</include>
+            <include>**/*.php</include>
+            <include>**/*.map</include>
+            <include>**/*.gzip</include>
+            <include>**/*.svg</include>
+            <include>**/*.ttf</include>
+            <include>**/*.coffee</include>
+            <include>**/*.editorconfig</include>
+            <include>**/*.jshintrc</include>
+            <include>**/*.htaccess</include>
+            <include>**/*.jpg</include>
+            <include>**/*.jshintignore</include>
+            <include>**/*.png</include>
+            <include>**/*.gitattributes</include>
+            <include>**/*.gitignore</include>
+            <include>**/*.gif</include>
+            <include>**/*.css</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory>.settings</directory>
+          <includes>
+            <include>**/*.xml</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>.externalToolBuilders</directory>
+          <includes>
+            <include>**/*.launch</include>
+          </includes>
+        </fileSet>
+        <fileSet encoding="UTF-8">
+          <directory>.settings</directory>
+          <includes>
+            <include>**/*.prefs</include>
+            <include>**/*.component</include>
+            <include>**/*.container</include>
+            <include>**/*.name</include>
+            <include>**/*.jsdtscope</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.classpath</include>
+            <include>.project</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+    </module>
+  </modules>
+</archetype-descriptor>

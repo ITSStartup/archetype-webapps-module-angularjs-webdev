@@ -1,0 +1,67 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<html ng-app="BasicSlider">
+<head>
+	<title>Angular Flexlider Example - Basic Slider</title>
+	<link rel="stylesheet" type="text/css" href="../components/flexslider/flexslider.css">
+	<style type="text/css">
+	.flexslider-container {
+		width: 50%;
+		margin: 10px auto;
+	}
+	</style>
+</head>
+<body ng-controller="BasicSliderCtrl">
+
+	<flex-slider
+		slide="s in slideshow.slides"
+		animation="slide"
+		start="slideshow.start()"
+		before="slideshow.before()"
+		after="slideshow.after()"
+		end="slideshow.end()">
+		<li>
+			<img ng-src="{{s}}">
+		</li>
+	</flex-slider>
+
+	<div>
+		<p>Callbacks:</p>
+		<ul>
+			<li ng-repeat="l in slideshow.log">{{l}}</li>
+		</ul>
+	</div>
+
+	<script src="../components/jquery/jquery.js"></script>
+	<script src="../components/flexslider/jquery.flexslider.js"></script>
+	<script src="../components/angular/angular.js"></script>
+	<script src="../angular-flexslider.js"></script>
+	<script type="text/javascript">
+	angular.module('BasicSlider', ['angular-flexslider'])
+		.controller('BasicSliderCtrl', function(${symbol_dollar}scope) {
+			${symbol_dollar}scope.slideshow = {}
+			${symbol_dollar}scope.slideshow.slides = [
+				'http://flexslider.woothemes.com/images/kitchen_adventurer_cheesecake_brownie.jpg',
+				'http://flexslider.woothemes.com/images/kitchen_adventurer_lemon.jpg',
+				'http://flexslider.woothemes.com/images/kitchen_adventurer_donut.jpg',
+				'http://flexslider.woothemes.com/images/kitchen_adventurer_caramel.jpg'
+			];
+			${symbol_dollar}scope.slideshow.log = []
+			${symbol_dollar}scope.slideshow.start = function(){
+				${symbol_dollar}scope.slideshow.log.push('start');
+			}
+			${symbol_dollar}scope.slideshow.before = function(){
+				${symbol_dollar}scope.slideshow.log.push('before');
+			}
+			${symbol_dollar}scope.slideshow.after = function(){
+				${symbol_dollar}scope.slideshow.log.push('after');
+			}
+			${symbol_dollar}scope.slideshow.end = function(){
+				${symbol_dollar}scope.slideshow.log.push('end');
+			}
+		});
+	</script>
+
+</body>
+</html>

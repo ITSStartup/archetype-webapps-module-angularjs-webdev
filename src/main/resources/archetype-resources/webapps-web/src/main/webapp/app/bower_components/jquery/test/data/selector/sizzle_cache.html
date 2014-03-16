@@ -1,0 +1,24 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>jQuery selector - sizzle cache</title>
+
+	<script src="../../jquery.js"></script>
+	<script>
+		document.write(
+			"<script>var ${symbol_dollar}cached = jQuery.noConflict(true);<${symbol_escape}x2Fscript>" +
+			"<script src='" + document.getElementById("jquery-js").src + "?overwrite'><${symbol_escape}x2Fscript>"
+		);
+	</script>
+
+</head>
+<body>
+	<div class="test">
+		<a href="${symbol_pound}" id="collision">Worlds collide</a>
+	</div>
+</body>
+</html>

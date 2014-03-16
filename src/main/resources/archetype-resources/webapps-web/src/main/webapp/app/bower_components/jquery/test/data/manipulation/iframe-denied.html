@@ -1,0 +1,39 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>body</title>
+	</head>
+	<body>
+		<div id="qunit-fixture"></div>
+		<script src="../../jquery.js"></script>
+		<script>
+			var script = document.getElementsByTagName( "script" )[ 0 ],
+				div = document.createElement( "div" ),
+				src = "http://" + window.parent.externalHost,
+				success = true,
+				error = "";
+
+			script.parentNode.appendChild( div );
+			div.innerHTML = "<iframe name=${symbol_escape}"test${symbol_escape}" src=${symbol_escape}"" + src + "${symbol_escape}">";
+
+			jQuery(function() {
+				try {
+					jQuery( "<div>hello<div>world</div>!</div>" ).appendTo( "${symbol_pound}qunit-fixture" );
+				} catch( e ) {
+					success = false;
+					error = e;
+				}
+
+				window.parent.iframeCallback({
+					status: success,
+					description: "buildFragment sets the context without throwing an exception" +
+						( error ? ": " + error : "" )
+				});
+			});
+		</script>
+	</body>
+</html>

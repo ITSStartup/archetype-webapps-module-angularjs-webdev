@@ -1,0 +1,38 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="../../jquery.js"></script>
+	<script>var ${symbol_dollar}j = jQuery.noConflict();</script>
+</head>
+<body>
+<iframe id="dont_return" src="dont_return.php"></iframe>
+<script>
+	var timeoutId, ${symbol_dollar},
+		timeoutFired = false;
+
+	setTimeout(function () {
+		// Load another jQuery copy using the first one.
+		${symbol_dollar}j.getScript( "../../../dist/jquery.js", function () {
+			${symbol_dollar}j( "${symbol_pound}dont_return" ).attr( "src", "about:blank" );
+
+			// document ready handled by the just-loaded jQuery copy.
+			${symbol_dollar}(function () {
+				clearTimeout( timeoutId );
+				if ( !timeoutFired ) {
+					window.parent.iframeCallback( true );
+				}
+			});
+		});
+
+		timeoutId = setTimeout(function () {
+			timeoutFired = true;
+			window.parent.iframeCallback( false );
+		}, 3000);
+	});
+</script>
+</body>
+</html>
