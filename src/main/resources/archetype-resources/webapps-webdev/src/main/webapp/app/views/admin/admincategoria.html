@@ -1,0 +1,56 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<div class="lineTop">
+    <div class="titRedLeft"></div>
+    <div class="titRedMiddle">
+        <h1 class="font_gotham_rounded_bold">Gestão de categorias</h1>
+    </div>
+    <div class="titRedRight"></div>
+    <div class="rastro">
+        <p class="font_gotham_rounded_bold"><a href="${symbol_pound}/admin">DASHBOARD</a> > GESTÃO DE CATEGORIAS</p>
+    </div>
+</div>
+<div class="lineMiddle">
+    <div class="boxCliente marg_left_18">
+        <form class="formAddProd" name="formcategoria" novalidate>                         
+            <div class="lineTab_100 w_670" ng-class="getCssClasses">
+                <label class="float_lef pad_top_8 labels">* Campo Obrigatório</label>
+                <div class="float_lef">
+                    <label class="float_lef pad_top_8 labels w100">Categoria *:</label>
+                    <input type="text" ng-model="categoria.nome" name="categoria" class="input_bg_451" required>
+                </div>
+                <div class="float_lef">
+                    <label class="float_lef pad_top_8 labels w100">Status:</label>
+                    <input type="radio" name="categoria.status" ng-model="categoria.status" value="Ativo"> Ativo
+                    <input type="radio" name="categoria.status" value="Inativo"  ng-model="categoria.status">Inativo                                 
+                </div>
+            </div>
+            <div class="float_right marg_right_38 marg_bt_10">
+                <div class="loading" ng-show="loading"></div>
+                <button class="botao_salvar_121_38"  ng-click="save()" ng-disabled="formcategoria.${symbol_dollar}invalid" ng-show="!loading"></button>
+            </div>
+        </form>
+    </div>                
+</div>                
+<div class="lineBottom"></div>
+<div class="line_100 marg_left_18 marg_top_10">
+</div>
+<div class="float_lef pad_top_5">
+    <div class="tabTop"></div>
+    <div class="tabMiddle">  
+        <div class="text_align_left w_300 font_gotham_rounded_bold">Nome</div>              
+        <div class="text_align_left w_235 font_gotham_rounded_bold">Status</div>              
+    </div>
+</div>
+<div>
+    <div class="tabLine bg_none marg_top_7"  ng-repeat="categoria in listCategorias | orderBy:['nome']">
+        <div class="text_align_left w_300">{{categoria.nome}}</div>
+        <div class="text_align_left w_235">{{categoria.status}}</div>
+        <div class="text_align_right w_97">
+            <a href ng-click="edit(categoria)">
+                <img ng-src="images/botao_editar.png" />
+            </a>
+        </div>
+    </div>
+</div>

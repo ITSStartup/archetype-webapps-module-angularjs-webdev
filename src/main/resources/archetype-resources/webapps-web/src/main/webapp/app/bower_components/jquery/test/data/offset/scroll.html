@@ -1,0 +1,42 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>scroll</title>
+		<style type="text/css" media="screen">
+			body { margin: 1px; padding: 5px; }
+			div.scroll { position: relative; margin: 1px; border: 2px solid ${symbol_pound}000; padding: 5px; width: 100px; height: 100px; background: ${symbol_pound}fff; overflow: auto; }
+			${symbol_pound}scroll-1 { top: 0; left: 0; }
+				${symbol_pound}scroll-1-1 { top: 1px; left: 1px; }
+					${symbol_pound}scroll-1-1-1 { top: 1px; left: 1px; }
+			${symbol_pound}forceScroll { width: 5000px; height: 5000px; }
+			${symbol_pound}marker { position: absolute; border: 2px solid ${symbol_pound}000; width: 50px; height: 50px; background: ${symbol_pound}ccc; }
+		</style>
+		<script src="../../jquery.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			jQuery(function(${symbol_dollar}) {
+				window.scrollTo(1000,1000);
+				${symbol_dollar}('${symbol_pound}scroll-1')[0].scrollLeft = 5;
+				${symbol_dollar}('${symbol_pound}scroll-1')[0].scrollTop = 5;
+				${symbol_dollar}('.scroll').click(function() {
+					${symbol_dollar}('${symbol_pound}marker').css( ${symbol_dollar}(this).offset() );
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="scroll-1" class="scroll">
+			<div id="scroll-1-1" class="scroll">
+				<div id="scroll-1-1-1" class="scroll"></div>
+			</div>
+		</div>
+		<div id="forceScroll"></div>
+		<div id="marker"></div>
+		<p class="instructions">Click the white box to move the marker to it.</p>
+	</body>
+</html>

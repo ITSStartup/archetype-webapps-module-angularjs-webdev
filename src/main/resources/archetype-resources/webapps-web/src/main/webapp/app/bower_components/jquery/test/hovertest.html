@@ -1,0 +1,161 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<html>
+<head>
+<title>Hover tests</title>
+<script src="jquery.js"></script>
+<style>
+/* Remove body dimensions so we can test enter/leave to surrounding browser chrome */
+body, html {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 2px 0;
+}
+.hover-box {
+	background: ${symbol_pound}f33;
+	padding: 3px;
+	margin: 10px 40px 20px 0;
+}
+.hover-status {
+	background: ${symbol_pound}f66;
+	padding: 1px;
+}
+.hover-inside {
+	background: ${symbol_pound}6f6;
+	padding: 1px;
+	margin: 8px auto;
+	width: 40%;
+	text-align: center;
+}
+</style>
+ </head>
+ <body>
+	<h2>Hover (mouse{over,out,enter,leave}) Tests</h2>
+	<p>Be sure to try moving the mouse out of the browser via the left side on each test.</p>
+	<div id="wrapper">
+
+	<div id="hoverbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			.hover() in/out: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here should NOT trigger the counter.
+		</div>
+	</div>
+	<div id="liveenterbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			Live enter/leave: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here should NOT trigger the counter.
+		</div>
+	</div>
+	<div id="delegateenterbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			Delegated enter/leave: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here should NOT trigger the counter.
+		</div>
+	</div>
+
+	<div id="overbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			Bind over/out: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here SHOULD trigger the counter.
+		</div>
+	</div>
+	<div id="liveoverbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			Live over/out: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here SHOULD trigger the counter.
+		</div>
+	</div>
+	<div id="delegateoverbox" class="hover-box">
+		<div class="hover-status">
+			<button>Activate</button>
+			Delegated over/out: <span class="ins">0</span> / <span class="outs">0</span>
+		</div>
+		<div class="hover-inside">
+			Mouse over here SHOULD trigger the counter.
+		</div>
+	</div>
+
+	</div> <!-- wrapper -->
+
+<script>
+
+${symbol_dollar}(function(){
+
+	var x,
+		countIns = function() {
+			var d = ${symbol_dollar}(this).data();
+			${symbol_dollar}("span.ins", this).text(++d.ins);
+		},
+		countOuts = function() {
+			var d = ${symbol_dollar}(this).data();
+			${symbol_dollar}("span.outs", this).text(++d.outs);
+		};
+
+	// Tests can be activated separately or in combination to check for interference
+
+	${symbol_dollar}("${symbol_pound}hoverbox button").click(function(){
+		${symbol_dollar}("${symbol_pound}hoverbox")
+			.data({ ins: 0, outs: 0 })
+			.hover( countIns, countOuts );
+		${symbol_dollar}(this).remove();
+	});
+	${symbol_dollar}("${symbol_pound}delegateenterbox button").click(function(){
+		${symbol_dollar}("html")
+			.find("${symbol_pound}delegateenterbox").data({ ins: 0, outs: 0 }).end()
+			.delegate("${symbol_pound}delegateenterbox", "mouseenter", countIns )
+			.delegate("${symbol_pound}delegateenterbox", "mouseleave", countOuts );
+		${symbol_dollar}(this).remove();
+	});
+	${symbol_dollar}("${symbol_pound}liveenterbox button").click(function(){
+		${symbol_dollar}("${symbol_pound}liveenterbox")
+			.data({ ins: 0, outs: 0 })
+			.live("mouseenter", countIns )
+			.live("mouseleave", countOuts );
+		${symbol_dollar}(this).remove();
+	});
+
+	${symbol_dollar}("${symbol_pound}overbox button").click(function(){
+		${symbol_dollar}("${symbol_pound}overbox")
+			.data({ ins: 0, outs: 0 })
+			.bind("mouseover", countIns )
+			.bind("mouseout", countOuts );
+		${symbol_dollar}(this).remove();
+	});
+	${symbol_dollar}("${symbol_pound}liveoverbox button").click(function(){
+		${symbol_dollar}("${symbol_pound}liveoverbox")
+			.data({ ins: 0, outs: 0 })
+			.live("mouseover", countIns )
+			.live("mouseout", countOuts );
+		${symbol_dollar}(this).remove();
+	});
+	${symbol_dollar}("${symbol_pound}delegateoverbox button").click(function(){
+		${symbol_dollar}(document)
+			.find("${symbol_pound}delegateoverbox").data({ ins: 0, outs: 0 }).end()
+			.delegate("${symbol_pound}delegateoverbox", "mouseover", countIns )
+			.delegate("${symbol_pound}delegateoverbox", "mouseout", countOuts );
+		${symbol_dollar}(this).remove();
+	});
+});
+
+</script>
+</body>
+</html>

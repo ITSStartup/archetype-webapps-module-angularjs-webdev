@@ -1,5 +1,4 @@
 ##Maven archetype-webapps-module-angularjs-webdev
-=========================================
 
 webapps module archetype maven for creating web application with Hibernate 4.x, Spring 3.x, Jersey 1.x, DBUnit, Yeoman, AngularJS 1.2.x 
 

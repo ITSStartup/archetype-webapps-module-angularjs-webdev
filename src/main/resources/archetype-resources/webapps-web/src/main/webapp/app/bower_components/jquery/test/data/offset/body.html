@@ -1,0 +1,29 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>body</title>
+		<style type="text/css" media="screen">
+			body { margin: 1px; padding: 5px; position: relative }
+			${symbol_pound}marker { position: absolute; border: 2px solid ${symbol_pound}000; width: 50px; height: 50px; background: ${symbol_pound}ccc; }
+			${symbol_pound}firstElement { width: 50px; height: 50px; background: green; }
+		</style>
+		<script src="../../jquery.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			jQuery(function(${symbol_dollar}) {
+				${symbol_dollar}('body').click(function() {
+					${symbol_dollar}('${symbol_pound}marker').css( ${symbol_dollar}(this).offset() );
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="firstElement"></div>
+		<div id="marker"></div>
+	</body>
+</html>
