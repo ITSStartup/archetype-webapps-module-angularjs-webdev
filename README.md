@@ -48,6 +48,7 @@ Starting app in webdev
 ```java 
 grunt server 
 ```
+
 3. App starts in http://127.0.0.1:9000
 
 Like this front-end code can be tested and debugged. 
@@ -68,7 +69,7 @@ grunt build --force
 **Step 1**
 
 ```java
-git clone https://github.com/ITSStartup/archetype-webapps-module-angularjs-webdev.git
+git clone git@github.com:ITSStartup/archetype-webapps-module-angularjs-webdev.git
 ```
 
 **Step 2**
@@ -89,4 +90,6 @@ Now its is expected you see in group id: *br.com.its.archetype*
 
 * choose the archetype and go ahead clicking in next 
 
-**Step 4 Import  webapps-webdev via Maven in your IDE**
+**Step 4
+
+Import  webapps-webdev via Maven in your IDE**
